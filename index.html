@@ -5,129 +5,247 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sankareswari M | Portfolio</title>
   <style>
+    :root {
+      --primary: #4f46e5;     /* Indigo */
+      --secondary: #6366f1;   /* Lighter Indigo */
+      --accent: #06b6d4;      /* Cyan */
+      --light: #f9fafb;
+      --dark: #1f2937;
+    }
+
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding-top: 70px; /* space for fixed navbar */
-      background-color: #f4f6f9;
-      color: #333;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      padding-top: 80px;
     }
 
     nav {
       position: fixed;
       top: 0;
-      left: 0;
-      right: 0;
-      background-color: #0077b5;
-      padding: 16px 0;
+      width: 100%;
+      background: var(--primary);
+      padding: 18px 0;
       text-align: center;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
     nav a {
-      color: #fff;
-      margin: 0 15px;
+      color: white;
+      margin: 0 20px;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: bold;
       font-size: 16px;
-      transition: color 0.3s ease;
+      transition: all 0.3s;
     }
 
     nav a:hover {
-      color: #e0e0e0;
+      color: var(--accent);
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1150px;
       margin: 0 auto;
-      background-color: #fff;
+      background: white;
       padding: 40px 30px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    }
+
+    h1, h2 {
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 20px;
     }
 
     section {
       margin-top: 60px;
     }
 
-    h1, h2 {
-      text-align: center;
-      color: #0077b5;
-    }
-
     .about {
       text-align: center;
-      line-height: 1.8;
+      padding: 10px 20px;
     }
 
     .profile-pic {
-      width: 130px;
-      height: 130px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #0077b5;
+      border: 5px solid var(--secondary);
       margin-bottom: 20px;
     }
 
     .projects, .skills, .certifications, .testimonials {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
       margin-top: 20px;
     }
 
     .project-card, .skill-card, .cert-card, .testimonial-card {
-      border: 1px solid #ddd;
-      border-radius: 10px;
+      background-color: var(--light);
+      border: 2px solid #e5e7eb;
+      border-left: 6px solid var(--secondary);
+      border-radius: 12px;
       padding: 20px;
-      background-color: #fafafa;
-      transition: transform 0.2s;
+      transition: all 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.04);
     }
 
     .project-card:hover,
     .skill-card:hover,
     .cert-card:hover,
     .testimonial-card:hover {
-      transform: scale(1.02);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
     }
 
-    img.resume-image {
+    .resume-image {
       display: block;
-      max-width: 400px;
+      max-width: 450px;
       width: 100%;
       margin: 20px auto;
-      border-radius: 10px;
-      border: 1px solid #ccc;
+      border-radius: 12px;
+      border: 2px solid var(--primary);
     }
 
     .contact {
       text-align: center;
       font-size: 16px;
+      margin-top: 20px;
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      background-color: #eee;
+      background-color: var(--primary);
+      color: white;
       margin-top: 60px;
       font-size: 14px;
-      color: #555;
     }
 
     a {
-      color: #0077b5;
+      color: var(--secondary);
+      text-decoration: none;
     }
+
+    a:hover {
+      text-decoration: underline;
+    }
+    .skill-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+.certifications {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.certification-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fafafa;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certification-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.certification-icon {
+  width: 200px; /* Increased size for better visibility */
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.certification-card h4 {
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: #333;
+}
+
+.certification-card p {
+  font-size: 1em;
+  color: #555;
+  margin-top: 5px;
+}
+
+#contact {
+  background-color: #f4f7fc;
+  padding: 40px 20px;
+  margin-top: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 2em;
+  color: #0077b5;
+  margin-bottom: 20px;
+}
+
+.contact-details {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-align: left;
+}
+
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.contact-item p {
+  font-size: 1.1em;
+  color: #333;
+  margin: 0;
+}
+
+.contact-item a {
+  color: #0077b5;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #005f8d;
+}
+
+
 
     @media (max-width: 768px) {
       nav a {
         display: inline-block;
-        margin: 8px;
-        font-size: 14px;
+        margin: 10px;
+        font-size: 15px;
       }
     }
   </style>
@@ -140,7 +258,6 @@
     <a href="#skills">Skills</a>
     <a href="#certifications">Certifications</a>
     <a href="#resume">Resume</a>
-    <a href="#testimonials">Testimonials</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -150,8 +267,7 @@
       <h1>About Me</h1>
       <div class="about">
         <img src="profile.jpg" alt="Profile Picture" class="profile-pic" />
-        <p>Hello! I'm <strong>Sankareswari M</strong>, a Computer Science Engineering student passionate about full-stack development and UI/UX design.</p>
-        <p>I specialize in building responsive web applications and creating intuitive user experiences. I enjoy solving real-world problems through tech and continuously learning new tools and technologies.</p>
+        <p>Hi! I'm <strong>Sankareswari M</strong>, a Computer Science Engineering student who loves building modern web applications and designing intuitive UI/UX experiences.</p>
       </div>
     </section>
 
@@ -160,19 +276,19 @@
       <div class="projects">
         <div class="project-card">
           <h3>Pantry Tracker</h3>
-          <p>A web app to manage pantry items with expiry alerts and usage tracking using Firebase and JavaScript.</p>
+          <p>Track pantry items, manage expiry alerts and generate shopping lists with Firebase.</p>
         </div>
         <div class="project-card">
           <h3>Bill Management System</h3>
-          <p>A billing system built using React and MongoDB, allowing real-time calculations, updates, and report generation.</p>
+          <p>Full-featured billing app using MongoDB and React with real-time updates.</p>
         </div>
         <div class="project-card">
-          <h3>Resume Website</h3>
-          <p>A simple and elegant resume-hosting site with download functionality. Built using HTML & CSS only.</p>
+          <h3>Institutional Placment data management system</h3>
+          <p>website to manage the Placement activites with role based access student ,admin,staff</p>
         </div>
         <div class="project-card">
           <h3>CODSOFT UI/UX Designs</h3>
-          <p>Designed modern interfaces for e-commerce and restaurant themes using Figma, emphasizing clarity and user flow.</p>
+          <p>Designed UI mockups for food delivery and e-commerce using Figma.</p>
         </div>
       </div>
     </section>
@@ -180,31 +296,63 @@
     <section id="skills">
       <h2>Skills</h2>
       <div class="skills">
-        <div class="skill-card"><h4>HTML, CSS, JavaScript</h4></div>
-        <div class="skill-card"><h4>React & Firebase</h4></div>
-        <div class="skill-card"><h4>MongoDB, Node.js</h4></div>
-        <div class="skill-card"><h4>Figma & Adobe XD</h4></div>
-        <div class="skill-card"><h4>Git & GitHub</h4></div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="skill-icon"/>
+          <h4>HTML</h4>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="skill-icon"/>
+          <h4>CSS</h4>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="skill-icon"/>
+          <h4>JavaScript</h4>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="skill-icon"/>
+          <h4>React</h4>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" class="skill-icon"/>
+          <h4>Firebase</h4>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="skill-icon"/>
+          <h4>MongoDB</h4>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="skill-icon"/>
+          <h4>Git</h4>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" class="skill-icon"/>
+          <h4>Figma</h4>
+        </div>
       </div>
     </section>
-
+    
     <section id="certifications">
-      <h2>Certifications</h2>
+      <h2>Professional Certifications</h2>
       <div class="certifications">
-        <div class="cert-card">
-          <h4>Full Stack Web Development</h4>
-          <p>Udemy | Completed in 2024</p>
+        <div class="certification-card">
+          <img src="angular.jpg" alt="Angular Certification" class="certification-icon"/>
+          <h4>Angular Certification</h4>
+          <p>Completed an Angular certification from Infosys, enhancing front-end development skills.</p>
         </div>
-        <div class="cert-card">
-          <h4>UI/UX Design Fundamentals</h4>
-          <p>Coursera | 2023</p>
+        <div class="certification-card">
+          <img src="css.jpg" alt="CSS Certification" class="certification-icon"/>
+          <h4>CSS Certification</h4>
+          <p>Completed a CSS certification from Infosys, mastering modern styling techniques for web applications.</p>
         </div>
-        <div class="cert-card">
-          <h4>Firebase in Web Apps</h4>
-          <p>Google Developer Course | 2023</p>
+        <div class="certification-card">
+          <img src="iiot.jpg" alt="Industrial 4.0 Certification" class="certification-icon"/>
+          <h4>Industrial 4.0</h4>
+          <p>Completed Introduction to Industrial 4.0 in NPTEL.</p>
         </div>
       </div>
     </section>
+    
+    
 
     <section id="resume">
       <h2>Resume</h2>
@@ -213,28 +361,24 @@
       </a>
     </section>
 
-    <section id="testimonials">
-      <h2>Testimonials</h2>
-      <div class="testimonials">
-        <div class="testimonial-card">
-          <h4>Team Lead, CODSOFT</h4>
-          <p>"Sankareswari consistently delivered creative and high-quality UI designs on time. A pleasure to work with."</p>
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-details">
+        <div class="contact-item">
+          
+          <p>📧 <a href="mailto:2212097@nec.edu.in">2212097@nec.edu.in</a></p><br>
         </div>
-        <div class="testimonial-card">
-          <h4>Mentor, Internship Project</h4>
-          <p>"Her understanding of full-stack development is solid. She's quick to learn and adapt to new technologies."</p>
+        <div class="contact-item">
+          
+          <p>🔗 <a href="https://github.com/SANKARESWARI-M" target="_blank">GitHub</a></p><br>
+        </div>
+        <div class="contact-item">
+          <p>🌐 <a href="https://www.linkedin.com/in/sankareswari-m" target="_blank">LinkedIn</a></p><br>
         </div>
       </div>
     </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p class="contact">
-        📧 <a href="mailto:youremail@example.com">youremail@example.com</a><br/>
-        🔗 <a href="https://github.com/SANKARESWARI-M" target="_blank">GitHub Profile</a><br/>
-        🌐 <a href="https://www.linkedin.com/in/sankareswari-m" target="_blank">LinkedIn Profile</a>
-      </p>
-    </section>
+    
+    
 
   </div>
 
